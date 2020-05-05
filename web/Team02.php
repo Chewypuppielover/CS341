@@ -11,7 +11,7 @@
   </head>
   <body>
     <?php echo "Name: $name </br>"; 
-          echo "Email: $email <p><a href="$email">Send email</a></p> </br>";
+          echo "Email: $email <p><a href=\"$email\">Send email</a></p> </br>";
           echo "Major: $major </br>";
           echo "$comments </br>";
           echo "Has been to: ";//$countries";
