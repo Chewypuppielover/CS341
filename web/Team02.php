@@ -7,7 +7,7 @@
 ?>
 <html>
   <head>
-    <title Team02 php </title>
+    <title> Team02 php </title>
   </head>
   <body>
     <?php echo $name; 
