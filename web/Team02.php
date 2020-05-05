@@ -14,8 +14,8 @@
           echo "Email: $email </br>";
           echo "Major: $major </br>";
           echo "$comments </br>";
-          echo "Has been to: $countries";
-          //foreach($countries as $country){echo "$country, ";}
+          echo "Has been to: ";//$countries";
+          foreach($countries as $country){echo "$country, ";}
     ?>
   </body>
 </html>
