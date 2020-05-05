@@ -3,7 +3,7 @@
     $email = $_POST["Email"];
     $major = $_POST["Major"];
     $comments = $_POST["Comments"];
-    $countries = $_POST["Loc"];
+    $countries[] = $_POST["Loc"];
 ?>
 <html>
   <head>
