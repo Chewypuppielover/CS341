@@ -3,7 +3,7 @@
     $email = $_POST["Email"];
     $major = $_POST["Major"];
     $comments = $_POST["Comments"];
-    $countries[] = $_POST["Loc"];
+    $countries = $_POST["Loc"];
 ?>
 <html>
   <head>
@@ -14,7 +14,7 @@
           echo "Email: $email </br>";
           echo "Major: $major </br>";
           echo "$comments </br>";
-          echo "Has been to:";
+          echo "Has been to: ";
           foreach($countries as $country){echo "$country, ";}
     ?>
   </body>
