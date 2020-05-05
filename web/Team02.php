@@ -10,11 +10,11 @@
     <title> Team02 php </title>
   </head>
   <body>
-    <?php echo $name; 
-          echo $email;
-          echo $major;
-          echo $comments;
-          echo $countries;
+    <?php echo "Name: $name </br>"; 
+          echo "Email: $email </br>";
+          echo "Major: $major </br>";
+          echo "$comments </br>";
+          echo "Has been to: $countries";
     ?>
   </body>
 </html>
