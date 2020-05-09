@@ -33,7 +33,7 @@
             <th> Products </th>
             <?php
                foreach($_Session["products"] as $item) {
-                  echo "<tr>" . $item . "</tr>";
+                  //echo "<tr>" . $item . "</tr>";
                }
             ?>
            <tr>
