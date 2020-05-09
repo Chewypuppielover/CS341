@@ -2,6 +2,7 @@
    session_start();
    if(!isset($_Session["cart"])){
       $_Session["cart"] = array();
+      $_Session["products"] = array("Broken TV", "JarJar", "Pirate Magnet", "Cleric", "Sorcerer", "Ranger", "Druid");
    }      
 ?>
 <!DOCTYPE html>
@@ -24,12 +25,17 @@
    </head>
    <body>
       <header>
-         Sally's Terrible Store <br>
+         <h1>Sally's Terrible Store </h1>
          <a href="Prove03_cart.php"> Cart </a>
       </header>
       <div style="display:flex">
          <table>
-           <th> Products </th>
+            <th> Products </th>
+            <?php
+               foreach $item in $_Session["products"] {
+                  echo "<tr> $item </tr>";
+               }
+            ?>
            <tr>
                <td> <label><input type="checkbox" name="products" value="i1" id="i1" onclick="total('i1')">Broken TV </td><td> $5 </td></label>
                <td> <label><input type="checkbox" name="products" value="i5" id="i5" onclick="total('i5')">Banana PB&J sandwich </td><td> $10 </td></label>
