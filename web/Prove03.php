@@ -24,17 +24,20 @@
       <style></style>
    </head>
    <body>
-      <header>
+      <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
          <a href="Prove03_cart.php"> Cart </a>
       </header>
+      <hr/>
       <div style="display:flex">
          <table>
             <th> Products </th>
             <th>
             <?php
                foreach($_Session["products"] as $item) {
-                  //echo "<tr>" . $item . "</tr>";
+                  echo "<tr>" 
+                  echo $item
+                  echo "</tr>";
                }
             ?>
             </th>
