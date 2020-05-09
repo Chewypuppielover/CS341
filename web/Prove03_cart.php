@@ -23,7 +23,7 @@
    <body>
       <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
-         <a href="Prove03_cart.php"> Cart </a>
+         <a href="Prove03.php"> Products </a>
       </header>
          <table>
             <th> Products in Cart</th>
