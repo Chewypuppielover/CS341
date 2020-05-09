@@ -5,7 +5,7 @@
       $_Session["products"] = array("Broken TV", "JarJar", "Pirate Magnet", "Cleric", "Sorcerer", "Ranger", "Druid");
    }
    
-   function addToCart(item){
+   function addToCart($item){
       $index = count($_Session["cart"]);
       $_Session["cart"][$index] = item;
    }  

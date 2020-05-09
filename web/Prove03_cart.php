@@ -4,7 +4,7 @@
       $_Session["cart"] = array();
    }
 
-   function removeFromCart(item){
+   function removeFromCart($item){
       $index = array_search($item, $_Session["cart"]);
       $_Session["cart"][$index] = null;
    }
