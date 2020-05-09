@@ -32,15 +32,20 @@
       <div style="display:flex">
          <table>
             <th> Products </th>
-            <tr>
+            
             <?php
+               $count = 0;
                foreach($_Session["products"] as $item) {
-                  echo "<td>";
-                  echo $item;
-                  echo "</td>";
+                  if($count == 0) echo "<tr>";
+                  echo "<td> $item </td>";
+                  $count += 1;
+                  if($count == 3) {
+                     $count = 0;
+                     echo "</tr>";
+                  }
                }
             ?>
-            </tr>
+            
            <tr>
                <td> <label><input type="checkbox" name="products" value="i1" id="i1" onclick="total('i1')">Broken TV </td><td> $5 </td></label>
                <td> <label><input type="checkbox" name="products" value="i5" id="i5" onclick="total('i5')">Banana PB&J sandwich </td><td> $10 </td></label>
