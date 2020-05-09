@@ -45,5 +45,6 @@
             ?>
          </table>
       </div>
+      <?php print_r($_Session["cart"]); ?>
    </body>
 </html>

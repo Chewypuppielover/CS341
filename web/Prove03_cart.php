@@ -25,22 +25,22 @@
          <h1>Sally's Terrible Store </h1>
          <a href="Prove03.php"> Products </a>
       </header>
-         <table>
-            <th> Products in Cart</th>
-            <?php
-               $count = 0;
-               foreach($_Session["cart"] as $item) {
-                  if($count == 0) echo "<tr>";
-                  echo "<td> $item <br> <button onclick=\"removeFromCart($item)\">Remove From Cart</button> </td>";
-                  $count += 1;
-                  if($count == 3) {
-                     $count = 0;
-                     echo "</tr>";
-                  }
+      <table>
+         <th> Products in Cart</th>
+         <?php
+            $count = 0;
+            foreach($_Session["cart"] as $item) {
+               if($count == 0) echo "<tr>";
+               echo "<td> $item <br> <button onclick=\"removeFromCart($item)\">Remove From Cart</button> </td>";
+               $count += 1;
+               if($count == 3) {
+                  $count = 0;
+                  echo "</tr>";
                }
-               if($count != 0) echo "</tr>";
-            ?>
-         </table>
-         <?php echo $_Session["cart"]; ?>
+            }
+            if($count != 0) echo "</tr>";
+         ?>
+      </table>
+      <?php print_r($_Session["cart"]); ?>
    </body>
 </html>
