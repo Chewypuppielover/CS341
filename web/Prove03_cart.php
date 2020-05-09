@@ -41,5 +41,6 @@
                if($count != 0) echo "</tr>";
             ?>
          </table>
+         <?php echo $_Session["cart"]; ?>
    </body>
 </html>
