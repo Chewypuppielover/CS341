@@ -1,7 +1,7 @@
 <?php
    session_start();
    if(!isset($_Session["cart"])){
-      $_Session["cart"] = array();
+      $_Session["cart"] = array("No items in Cart");
    }
 
    function removeFromCart($item){
