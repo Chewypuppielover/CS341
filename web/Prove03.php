@@ -23,6 +23,10 @@
       <style></style>
    </head>
    <body>
+      <header>
+         Sally's Terrible Store <br>
+         <a href="Prove03_cart.php"> Cart </a>
+      </header>
       <div style="display:flex">
          <table>
            <th> Products </th>
