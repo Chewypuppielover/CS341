@@ -32,7 +32,7 @@
          <table>
             <th> Products </th>
             <?php
-               foreach $item in $_Session["products"] {
+               foreach($item in $_Session["products"]) {
                   echo "<tr> $item </tr>";
                }
             ?>
