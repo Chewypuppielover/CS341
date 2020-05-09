@@ -1,5 +1,5 @@
 <?php
-   start_session();
+   session_start();
    if(!isset($_Session["cart"])){
       $_Session["cart"] = array();
    }      
@@ -36,10 +36,10 @@
            </tr>
            <tr>
                <td> <label><input type="checkbox" name="products" value="i6" id="i6" onclick="total('i6')">
-                       Answer to Life, the universe, and everything </td><td> $42 </td></label>
+                  Answer to Life, the universe, and everything </td><td> $42 </td></label>
                <td> <label><input type="checkbox" name="products" value="i2" id="i2" onclick="total('i2')">Jar Jar </td><td> $20 </td></label>
            </tr>
-       </table>
+         </table>
       </div>
    </body>
 </html>
