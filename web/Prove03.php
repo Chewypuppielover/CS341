@@ -17,8 +17,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Store Products </title>
       <!--<link rel="stylesheet" href=".css">-->
-      <!--<script src="jsFuncts.js"> </script>-->
-      <script type='text/javascript'>
+      <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
+      <script >
          function addToCart(item) {
             alert("<?php AddToCart(" . item . "); ?>");
          }
