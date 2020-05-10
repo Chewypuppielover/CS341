@@ -34,7 +34,7 @@
                $count = 0;
                foreach($_SESSION["products"] as $item) {
                   if($count == 0) echo "<tr>";
-                  echo "<td> $item <br> <button onclick=\"addToCart($item)\">Add to Cart</button> </td>";
+                  echo "<td> $item <br> <button onclick=\"addToCart('$item')\">Add to Cart</button> </td>";
                   $count += 1;
                   if($count == 3) {
                      $count = 0;
