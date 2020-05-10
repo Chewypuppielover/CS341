@@ -20,6 +20,7 @@
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script >
          function addToCart(item) {
+            alert(item);
             alert("<?php AddToCart(" . item . "); ?>");
          }
       </script>
