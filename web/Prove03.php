@@ -1,13 +1,13 @@
 <?php
    session_start();
-   if(!isset($_Session["cart"])){
-      $_Session["cart"] = array();
-      $_Session["products"] = array("Broken TV", "JarJar", "Pirate Magnet", "Cleric", "Sorcerer", "Ranger", "Druid");
+   if(!isset($_SESSION["cart"])){
+      $_SESSION["cart"] = array();
+      $_SESSION["products"] = array("Broken TV", "JarJar", "Pirate Magnet", "Cleric", "Sorcerer", "Ranger", "Druid");
    }
    
    function addToCart($item){
-      $index = count($_Session["cart"]);
-      $_Session["cart"][$index] = item;
+      $index = count($_SESSION["cart"]);
+      $_SESSION["cart"][$index] = item;
    }  
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
             <th> Products </th>
             <?php
                $count = 0;
-               foreach($_Session["products"] as $item) {
+               foreach($_SESSION["products"] as $item) {
                   if($count == 0) echo "<tr>";
                   echo "<td> $item <br> <button onclick=\"addToCart($item)\">Add to Cart</button> </td>";
                   $count += 1;
@@ -45,6 +45,6 @@
             ?>
          </table>
       </div>
-      <?php print_r($_Session["cart"]); ?>
+      <?php print_r($_SESSION["cart"]); ?>
    </body>
 </html>

@@ -1,9 +1,9 @@
 <?php
    session_start();
-   //if(!isset($_Session["cart"])) $_Session["cart"] = array("No items in Cart");
+   //if(!isset($_SESSION["cart"])) $_SESSION["cart"] = array("No items in Cart");
    function removeFromCart($item){
-      $index = array_search($item, $_Session["cart"]);
-      $_Session["cart"][$index] = null;
+      $index = array_search($item, $_SESSION["cart"]);
+      $_SESSION["cart"][$index] = null;
    }
 ?>
 <!DOCTYPE html>
@@ -25,10 +25,10 @@
       <table>
          <th> Products in Cart</th>
          <?php
-            if(!isset($_Session["cart"])) echo "<tr><td> No items in Cart </td></tr>";
+            if(!isset($_SESSION["cart"])) echo "<tr><td> No items in Cart </td></tr>";
             else {
                $count = 0;
-               foreach($_Session["cart"] as $item) {
+               foreach($_SESSION["cart"] as $item) {
                   if($count == 0) echo "<tr>";
                   echo "<td> $item <br> <button onclick=\"removeFromCart($item)\">Remove From Cart</button> </td>";
                   $count += 1;
@@ -41,6 +41,6 @@
             }
          ?>
       </table>
-      <?php print_r($_Session["cart"]); ?>
+      <?php print_r($_SESSION); ?>
    </body>
 </html>
