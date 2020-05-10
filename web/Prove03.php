@@ -6,8 +6,9 @@
    }
    
    function AddToCart($item){
+      echo $item;
       $index = count($_SESSION["cart"]);
-      $_SESSION["cart"][$index] = item;
+      $_SESSION["cart"][$index] = $item;
    }  
 ?>
 <!DOCTYPE html>
@@ -20,8 +21,7 @@
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script >
          function addToCart(item) {
-            alert(item);
-            alert("<?php AddToCart(" . item . "); ?>");
+            alert("<?php AddToCart(" + item + "); ?>");
          }
       </script>
       <style></style>
