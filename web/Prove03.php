@@ -19,7 +19,9 @@
       <!--<link rel="stylesheet" href=".css">-->
       <!--<script src="jsFuncts.js"> </script>-->
       <script type='text/javascript'>
-         function addToCart(item) AddToCart(item);
+         function addToCart(item) {
+            alert("<?php AddToCart(" . item . "); ?>");
+         }
       </script>
       <style></style>
    </head>
