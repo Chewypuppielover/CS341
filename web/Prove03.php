@@ -3,6 +3,11 @@
    if(!isset($_SESSION["cart"])){
       $_SESSION["cart"] = array();
       $_SESSION["products"] = array("Broken TV", "JarJar", "Pirate Magnet", "Cleric", "Sorcerer", "Ranger", "Druid");
+   }
+   
+   function AddToCart($item){
+      $index = count($_SESSION["cart"]);
+      $_SESSION["cart"][$index] = item;
    }  
 ?>
 <!DOCTYPE html>
@@ -14,12 +19,7 @@
       <!--<link rel="stylesheet" href=".css">-->
       <!--<script src="jsFuncts.js"> </script>-->
       <script type='text/javascript'>
-         function addToCart(item){
-            <?php
-               $index = count($_SESSION["cart"]);
-               $_SESSION["cart"][$index] = $item;
-            ?>
-         }
+         function addToCart(item) AddToCart(item);
       </script>
       <style></style>
    </head>
