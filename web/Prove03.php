@@ -21,7 +21,8 @@
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script >
          function addToCart(item) {
-            alert("<?php AddToCart(" + item + "); ?>");
+            var stg = "<?php AddToCart(" + item + "); ?>";
+            alert(str);
          }
       </script>
       <style></style>
