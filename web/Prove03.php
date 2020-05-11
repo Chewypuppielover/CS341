@@ -20,8 +20,8 @@
       <script >
          function addToCart(item) {
             var p = "was added <?php ?>";
-            var str = "AddToCart(" + item + "); ?>";
-            alert(p.concat("", str).replace("?>", ""));
+            var str = "Added to Cart <PHP AddToCart(" + item + "); ?>";
+            alert(str.replace("PHP", "?php"));
          }
       </script>
       <style></style>
