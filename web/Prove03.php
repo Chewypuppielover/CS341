@@ -20,7 +20,7 @@
       <script >
          function addToCart(item) {
             var str = " AddToCart(" + item + "); ?>";
-            alert(str.replace(" ", "<?php");
+            alert(str.replace(" ", "<?php"));
          }
       </script>
       <style></style>
