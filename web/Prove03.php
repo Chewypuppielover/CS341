@@ -19,8 +19,8 @@
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script >
          function addToCart(item) {
-            var str = "AddToCart(" + item + "); ?>";
             var p = "<?php";
+            var str = "AddToCart(" + item + "); ?>";
             alert(str);
          }
       </script>
