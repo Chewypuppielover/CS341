@@ -22,7 +22,8 @@
          function addToCart(item) {
             var p = "was added <?php ?>";
             var str = "Added to Cart <PHP AddToCart(" + item + "); ?>";
-            alert(str.replace("PHP", "?php"));
+            var out = str.replace("PHP", "?php");
+            alert(out);
          }
       </script>
       <style></style>
