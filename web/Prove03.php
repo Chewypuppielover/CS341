@@ -19,7 +19,8 @@
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script >
          function addToCart(item) {
-            var str = "User wants to add" + item + "to thier cart";
+            //var str = sprintf("<?php AddToCart(%s); ?>", item);
+            var str = "AddToCart(" + item + "); ?>";
             alert(str);
          }
       </script>
