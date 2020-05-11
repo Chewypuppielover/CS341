@@ -1,14 +1,12 @@
 <?php
    session_start();
    if(!isset($_SESSION["cart"])){
-      $_SESSION["cart"] = array();
-      $_SESSION["products"] = array("Broken TV", "JarJar", "Pirate Magnet", "Cleric", "Sorcerer", "Ranger", "Druid");
+      $_SESSION["cart"] = array("Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0, "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0, "Druid" => 0);
    }
    
    function AddToCart($item){
       echo $item;
-      $index = count($_SESSION["cart"]);
-      $_SESSION["cart"][$index] = $item;
+      $_SESSION["cart"][$item] += 1;
    }  
 ?>
 <!DOCTYPE html>
