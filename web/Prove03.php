@@ -32,16 +32,15 @@
          <a href="Prove03_cart.php"> Cart </a>
       </header>
       <hr/>
-      <!--<div style="display:flex">-->
-      <form method="post">
+      <div style="display:flex">
          <table>
             <th> Products </th>
             <?php
                $count = 0;
                foreach($_SESSION["cart"] as $item => $x) {
                   if($count == 0) echo "<tr>";
-                  echo "<td> <input type='text' name='item' value='$item' disabled> <br> ";
-                  echo "<input type='submit' value='Add To Cart'></td>";
+                  echo "<td><form method='post'><input type='text' name='item' value='$item' disabled> <br> ";
+                  echo "<input type='submit' value='Add To Cart'></form></td>";
                   $count += 1;
                   if($count == 3) {
                      $count = 0;
@@ -51,7 +50,7 @@
                if($count != 0) echo "</tr>";
             ?>
          </table>
-      </form>
+      </div>
       <?php print_r($_SESSION["cart"]); ?>
    </body>
 </html>
