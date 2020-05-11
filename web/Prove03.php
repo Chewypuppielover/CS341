@@ -19,7 +19,7 @@
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script >
          function addToCart(item) {
-            var str = "PHP AddToCart(" + item + "); ?>";
+            var str = " AddToCart(" + item + "); ?>";
             alert(str.replace("PHP", "<?php"));
          }
       </script>
