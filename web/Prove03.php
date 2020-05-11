@@ -36,10 +36,10 @@
             <th> Products </th>
             <?php
                $count = 0;
-               foreach($_SESSION["cart"] as $item) {
+               foreach($_SESSION["cart"] as $item => $x) {
                   if($count == 0) echo "<tr>";
                   echo "<td> $item <br> <button onclick=\"addToCart('$item')\">Add to Cart</button> </td>";
-                  echo "<?php /$item+=1; ?>";
+                  echo "<?php /$x+=1; ?>";
                   $count += 1;
                   if($count == 3) {
                      $count = 0;
