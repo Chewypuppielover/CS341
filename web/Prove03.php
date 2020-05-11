@@ -7,6 +7,7 @@
    function AddToCart($item){
       echo $item;
       $_SESSION["cart"][$item] += 1;
+      print_r($_SESSION["cart"]);
    }  
 ?>
 <!DOCTYPE html>
