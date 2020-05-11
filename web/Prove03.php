@@ -18,8 +18,11 @@
       <!--<link rel="stylesheet" href=".css">-->
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script >
+         function addOnclick(item){
+            getElementById(item).onclick = addToCart(item);
+         }
          function addToCart(item) {
-            var str = "<?php AddToCart(" + item + "); ?>";
+            var str = "<?php AddToCart(" . item . "); ?>";
             alert(str);
          }
       </script>
@@ -38,8 +41,7 @@
                $count = 0;
                foreach($_SESSION["cart"] as $item => $x) {
                   if($count == 0) echo "<tr>";
-                  echo "<td> $item <br> <button onclick=";
-                  echo "'<?php /$x+=1; ?>'";
+                  echo "<td> $item <br> <button id=$item";
                   echo ">Add to Cart</button> </td>";
                   $count += 1;
                   if($count == 3) {
