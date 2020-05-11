@@ -15,9 +15,8 @@
       <div>
         <h1>CS 213 Assignments</h1>
         <ul style="list-style-position:inside;">
-            <li> <a href="Prove01.html"> Home Page </a> </li>
-            <li> <a href="Prove02.html"> Shopping Cart </a></li>
-            <li> <a href="Prove03.html">  </a></li>
+            <li> <a href="Prove02.html"> Home Page </a> </li>
+            <li> <a href="Prove03.html"> Shopping Cart </a></li>
             <li> <a href="Prove04.html">  </a></li>
             <li> <a href="Prove05.html">  </a></li>
             <li> <a href="Prove06.html">  </a></li>
