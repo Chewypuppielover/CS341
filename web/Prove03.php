@@ -38,7 +38,7 @@
                $count = 0;
                foreach($_SESSION["cart"] as $item => $x) {
                   if($count == 0) echo "<tr>";
-                  echo "<td> $item <br> <button onclick="
+                  echo "<td> $item <br> <button onclick=";
                   echo ">Add to Cart</button> </td>";
                   echo "'<?php /$x+=1; ?>'";
                   $count += 1;
