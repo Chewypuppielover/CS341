@@ -22,7 +22,7 @@
             getElementById(item).onclick = addToCart(item);
          }
          function addToCart(item) {
-            var str = "<?php AddToCart(" item "); ?>";
+            var str = sprintf("<?php AddToCart(%s); ?>", item);
             alert(str);
          }
       </script>
