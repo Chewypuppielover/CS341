@@ -20,7 +20,7 @@
       <script >
          function addToCart(item) {
             //var str = sprintf("<?php AddToCart(%s); ?>", item);
-            var str = "AddToCart(" + item + "); ?>";
+            var str = "AddToCart(" + item + ");";
             alert(str);
          }
       </script>
