@@ -7,6 +7,7 @@
    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       echo "caught post";
       echo $_POST["item"];
+      AddToCart($_POST["item"]);
    }
    
    function AddToCart($item){
@@ -52,5 +53,12 @@
          </table>
       </div>
       <?php print_r($_SESSION["cart"]); ?>
+      <form method='get'><input type='submit' name='End Session' value='End Session'>
+      <?php
+         if(isset($_GET['End Session'])) {
+            session_unset();
+            session_destroy();
+         }
+      ?>
    </body>
 </html>
