@@ -24,7 +24,9 @@
       <title>Store Products </title>
       <!--<link rel="stylesheet" href=".css">-->
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
-      <script ></script>
+      <script>
+         function reset() location.reload();
+      </script>
       <style></style>
    </head>
    <body>
@@ -52,13 +54,16 @@
             ?>
          </table>
       </div>
-      <?php print_r($_SESSION["cart"]); ?>
-      <form method='get'><input type='submit' name='End Session' value='End Session'>
-      <?php
-         if(isset($_GET['End Session'])) {
-            session_unset();
-            session_destroy();
-         }
-      ?>
+      <form method='get'><input type='submit' onclick="reset()" name='End Session' value='End Session'>
+      <div id="info">
+         <?php
+            print_r($_SESSION["cart"]); 
+            
+            if(isset($_GET['End Session'])) {
+               session_unset();
+               session_destroy();
+            }
+         ?>
+      </div>
    </body>
 </html>
