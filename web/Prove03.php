@@ -6,7 +6,7 @@
    
    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       echo "caught post";
-      echo $_POST["item"];
+      echo "item = $_POST['item']";
       AddToCart($_POST["item"]);
    }
    
