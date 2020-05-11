@@ -4,6 +4,11 @@
       $_SESSION["cart"] = array("Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0, "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0, "Druid" => 0);
    }
    
+   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      echo "caught post";
+      echo $_POST[
+   }
+   
    function AddToCart($item){
       echo $item;
       $_SESSION["cart"][$item] += 1;
@@ -18,14 +23,7 @@
       <title>Store Products </title>
       <!--<link rel="stylesheet" href=".css">-->
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
-      <script >
-         function addToCart(item) {
-            var p = "was added <?php ?>";
-            var str = "Added to Cart <PHP AddToCart('" + item + "'); ?>";
-            var out = str.replace("PHP", "?php");
-            alert(out);
-         }
-      </script>
+      <script ></script>
       <style></style>
    </head>
    <body>
@@ -34,14 +32,16 @@
          <a href="Prove03_cart.php"> Cart </a>
       </header>
       <hr/>
-      <div style="display:flex">
+      <!--<div style="display:flex">-->
+      <form method="post">
          <table>
             <th> Products </th>
             <?php
                $count = 0;
                foreach($_SESSION["cart"] as $item => $x) {
                   if($count == 0) echo "<tr>";
-                  echo "<td> $item <br> <button onclick=\"addToCart('$item')\">Add to Cart</button> </td>";
+                  echo "<td> <input type='text' name='item' value='$item' disabled> <br> ";
+                  echo "<input type='submit' name='item' value='Add To Cart'></td>";
                   $count += 1;
                   if($count == 3) {
                      $count = 0;
@@ -51,7 +51,7 @@
                if($count != 0) echo "</tr>";
             ?>
          </table>
-      </div>
+      </form>
       <?php print_r($_SESSION["cart"]); ?>
    </body>
 </html>
