@@ -18,11 +18,7 @@
       <!--<link rel="stylesheet" href=".css">-->
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script >
-         function addOnclick(item){
-            getElementById(item).onclick = addToCart(item);
-         }
          function addToCart(item) {
-            //var str = sprintf("<?php AddToCart(%s); ?>", item);
             var str = "User wants to add" + item + "to thier cart";
             alert(str);
          }
