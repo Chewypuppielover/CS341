@@ -21,7 +21,7 @@
          function addToCart(item) {
             var p = "<?php ?>";
             var str = "AddToCart(" + item + "); ?>";
-            alert(str);
+            alert(p.concat("", str));
          }
       </script>
       <style></style>
