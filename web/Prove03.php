@@ -19,9 +19,9 @@
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script >
          function addToCart(item) {
-            var p = "<?php ?>";
+            var p = "was added <?php ?>";
             var str = "AddToCart(" + item + "); ?>";
-            alert(p.concat("", str));
+            alert(p.concat("", str).replace("?>", ""));
          }
       </script>
       <style></style>
