@@ -6,7 +6,7 @@
    
    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       echo "caught post";
-      echo $_POST["item"];
+      print_r $_POST;
       AddToCart($_POST["item"]);
    }
    
