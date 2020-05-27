@@ -1,4 +1,5 @@
 <?php
+   echo "DB start";
    function get_db() {
       $db = NULL;
 
@@ -49,4 +50,5 @@
 
       return $db;
    }
+   echo "DB end";
 ?>
