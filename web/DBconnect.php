@@ -51,4 +51,5 @@
       return $db;
    }
    echo "DB end";
+   get_db();
 ?>
