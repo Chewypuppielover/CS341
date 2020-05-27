@@ -1,5 +1,5 @@
 <?php 
-   require DBconnect.php;
+   require('DBconnect.php');
    $db = get_db(); 
 ?>
 <!DOCTYPE html>
