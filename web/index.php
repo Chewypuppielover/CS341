@@ -6,9 +6,9 @@
    </head>
    <body>
       <div>
-         <a href="Prove02.html">    Home Page </a>
-         <a href="indexProve.html"> Assignments </a>
-         <a href="indexTeam.html"> Team Activities </a>
+         <a href="Prove02.html">    Home Page </a> <br>
+         <a href="indexProve.html"> Assignments </a> <br>
+         <a href="indexTeam.html"> Team Activities </a> <br>
       </div>
       <hr/>
    </body>
