@@ -1,4 +1,7 @@
-
+<?php 
+   require('DBconnect.php');
+   $db = get_db(); 
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -13,7 +16,20 @@
          Verse: <input type='text' name='verse'> <br>
          Scripture: <input type='textarea' name='content'> <br>
          Topic: <br>
-        
+         <?php 
+            try {
+               $statement = $db->prepare('SELECT name FROM topic');
+               $statement-> execute();
+               while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+               {
+                  echo "<input type='checkbox' name='topics[]' value='$row['name']'>";
+               }
+            }
+            catch (PDOException $ex) {
+               echo "Error connecting to DB. Details: $ex";
+               die();
+            }
+         ?>
          <input type='submit' value='Insert'>
       </form>
    </body>
