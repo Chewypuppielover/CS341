@@ -5,6 +5,7 @@
       try {
          // default Heroku Postgres configuration URL
          $dbUrl = getenv('DATABASE_URL');
+         echo $dbUrl;
 
          if (!isset($dbUrl) || empty($dbUrl)) {
             // example localhost configuration URL with user: "ta_user", password: "ta_pass"
@@ -21,6 +22,7 @@
             // it would work consistently regardless of whether the application
             // were running locally or at heroku.
          }
+         echo $dbUrl;
 
          // Get the various parts of the DB Connection from the URL
          $dbopts = parse_url($dbUrl);
@@ -36,6 +38,7 @@
 
          // this line makes PDO give us an exception when there are problems, and can be very helpful in debugging!
          $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+         echo "success!";
       }
       catch (PDOException $ex) {
          // If this were in production, you would not want to echo
