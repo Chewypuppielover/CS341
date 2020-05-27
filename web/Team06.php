@@ -18,7 +18,7 @@
          Topic: <br>
          <?php 
             try {
-               $statement = $db->prepare('SELECT name FROM topic');
+               $statement = $db->prepare('SELECT name FROM topics');
                $statement-> execute();
                while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                {
