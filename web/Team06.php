@@ -13,16 +13,7 @@
          Verse: <input type='text' name='verse'> <br>
          Scripture: <input type='textarea' name='content'> <br>
          Topic: <br>
-         <?php 
-            try {
-               $statement = $db->prepare('SELECT name FROM topic');
-               $statement-> execute();
-               while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-               {
-                  echo "<input type='checkbox' name='topics[]' value='$row['name']'>";
-               }
-            }
-         ?>
+        
          <input type='submit' value='Insert'>
       </form>
    </body>
