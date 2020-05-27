@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+   <head>
+      <meta charset = "utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Team04.sql</title>
+   </head>
+   <body>
+      <pre>
+   CREATE TABLE users
+   (
+      id SERIAL NOT NULL PRIMARY KEY,
+      username VARCHAR(100) NOT NULL UNIQUE,
+      password VARCHAR(100) NOT NULL,
+      name VARCHAR(100) NOT NULL
+   );
+  
+   CREATE TABLE speaker
+   (
+      id SERIAL NOT NULL PRIMARY KEY,
+      name VARCHAR(100) NOT NULL
+   );
+
+   CREATE TABLE conference
+   (
+      id SERIAL NOT NULL PRIMARY KEY,
+      year SMALLINT NOT NULL,
+      is_spring BOOLEAN NOT NULL
+   );
+
+   CREATE TABLE notes
+   (
+      id SERIAL NOT NULL PRIMARY KEY,
+      user_id INT NOT NULL REFERENCES user(id),
+      speaker_id INT NOT NULL REFERENCES speaker(id),
+      conference_id INT NOT NULL REFERENCES conference(id),
+      content TEXT NOT NULL
+   );
+      </pre>
+   </body>
+</html>
