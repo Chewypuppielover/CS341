@@ -1,12 +1,12 @@
 <?php
-   echo "DB start";
+   echo "DB start \n";
    function get_db() {
       $db = NULL;
 
       try {
          // default Heroku Postgres configuration URL
          $dbUrl = getenv('DATABASE_URL');
-         echo $dbUrl;
+         echo "$dbUrl \n";
 
          if (!isset($dbUrl) || empty($dbUrl)) {
             // example localhost configuration URL with user: "ta_user", password: "ta_pass"
@@ -23,7 +23,7 @@
             // it would work consistently regardless of whether the application
             // were running locally or at heroku.
          }
-         echo $dbUrl;
+         echo "$dbUrl \n";
 
          // Get the various parts of the DB Connection from the URL
          $dbopts = parse_url($dbUrl);
@@ -50,6 +50,6 @@
 
       return $db;
    }
-   echo "DB end";
+   echo "DB end \n";
    get_db();
 ?>
