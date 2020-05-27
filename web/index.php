@@ -2,33 +2,15 @@
    <head>
       <meta charset = "utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title> Suzy Naegle's Assignment Index </title>
-      <style>
-         div {
-            margin: auto;
-            max-width: 100%;
-            width: fit-content;
-         }
-      </style>
+      <title> Suzy Naegle's Heroku Index </title>
    </head>
    <body>
       <div>
-         <h1>CS 345 Assignments</h1>
-         <ul style="list-style-position:inside;">
-            <li> <a href="Prove01.html"> Hello World     </a> </li>
-            <li> <a href="Prove02.html"> Home Page       </a> </li>
-            <li> <a href="Prove03.php" > Shopping Cart   </a></li>
-            <li> <a href="Prove04.html">  </a></li>
-            <li> <a href="Prove05.html">  </a></li>
-            <li> <a href="Prove06.html">  </a></li>
-            <li> <a href="Prove07.html">  </a></li>
-            <li> <a href="Prove08.html">  </a></li>
-            <li> <a href="Prove09.html">  </a></li>
-            <li> <a href="Prove10.html">  </a></li>
-            <li> <a href="Prove11.html">  </a></li>
-            <li> <a href="Prove12.html">  </a></li>
-         </ul>
+         <a href="Prove02.html">    Home Page </a>
+         <a href="indexProve.html"> Assignments </a>
+         <a href="indexTeam.html"> Team Activities </a>
       </div>
+      <hr/>
    </body>
 </html>
 
