@@ -10,7 +10,7 @@
    
    function RemoveFromCart($item){
       echo "<br>";
-      $_SESSION["cart"][$index] -= 1;
+      $_SESSION["cart"][$item] -= 1;
       print_r($_SESSION["cart"]);
    }
 ?>
@@ -35,7 +35,7 @@
                foreach($_SESSION["cart"] as $item => $x) {
                   if($x != 0) {
                      if($count == 0) echo "<tr>";
-                     echo "<td><form method='post'><input type='text' name='item' value='$item' hidden> $item <br> ";
+                     echo "<td><form method='post'><input type='text' name='item' value='$item' hidden>$x... $item <br> ";
                      echo "<input type='submit' value='Remove one from Cart'></form></td>";
                      $count += 1;
                      if($count == 3) {
