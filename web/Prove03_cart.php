@@ -55,8 +55,6 @@
       <div id="info">
          <form method='post'><input type='submit' name='End_Session' value='Clear Cart'>
          <?php
-            print_r($_SESSION["cart"]); 
-            
             if(isset($_POST['End_Session'])) {
                echo "ending session";
                session_unset();
