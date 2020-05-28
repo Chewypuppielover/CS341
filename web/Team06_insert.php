@@ -15,8 +15,7 @@
 
       foreach ($topics as $topic)
       {
-         echo $topic;
-         echo $scriptureID;
+         echo "Topic: $topic, Scripture: $scriptureID <br>";
          $statement = $db -> prepare('INSERT INTO linked VALUES (?, ?)');
          $statement -> execute([$topic, $scriptureID]);
       }
