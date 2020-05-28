@@ -26,13 +26,11 @@
       <!--<link rel="stylesheet" href=".css">-->
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script>
-         function reset()
-         {
+         function reset() {
             location.reload();
             document.getElementById("status").innerHTML = "successfully reloaded";
          }
       </script>
-      <style></style>
    </head>
    <body>
       <header style="text-align:center;">
@@ -48,7 +46,7 @@
                $count = 0;
                foreach($_SESSION["cart"] as $item => $x) {
                   if($count == 0) echo "<tr>";
-                  echo "<td><form method='post'><input type='text' name='item' value='$item' hidden> $item <br> ";
+                  echo "<td><form method='post'><input type='text' name='item' value='$item' hidden> $item <br>";
                   echo "<input type='submit' value='Add To Cart'></form></td>";
                   $count += 1;
                   if($count == 3) {
@@ -66,7 +64,7 @@
             print_r($_SESSION["cart"]); 
             
             if(isset($_GET['End Session'])) {
-               echo "ending session"
+               echo "ending session";
                session_unset();
                session_destroy();
             }
