@@ -43,7 +43,7 @@
                $count = 0;
                foreach($_SESSION["cart"] as $item => $x) {
                   if($count == 0) echo "<tr>";
-                  echo "<td><form method='post'><input type='text' name='item' value='$item' disabled> <br> ";
+                  echo "<td><form action='test.php' method='post'><input type='text' name='item' value='$item' disabled> <br> ";
                   echo "<input type='submit' value='Add To Cart'></form></td>";
                   $count += 1;
                   if($count == 3) {
