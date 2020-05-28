@@ -52,15 +52,13 @@
       </table>
       <br>
       <div id="info">
-         <form method='post'><input type='submit' name='End_Session' value='Clear Cart'>
+         <form method='post'><input type='submit' onclick="function {location.reload();}" name='End_Session' value='Clear Cart'>
          <?php
             if(isset($_POST['End_Session'])) {
                echo "ending session";
-               unset($_POST);
                session_unset();
                session_destroy();
                session_start();
-               echo "<script type='text/javascript'>location.reload();</script>";
             }
          ?>
       </div>
