@@ -7,6 +7,7 @@
          "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
    }
 ?><?php
+   $MAXCOL = 3;
    $DEBUG = true;
    if($DEBUG){
       print_r($_SESSION);
@@ -14,10 +15,7 @@
    }
    
    if(isset($_POST['item'])) {
-      if($DEBUG){
-         echo "caught post <br>";
-         print_r($_POST);
-      }
+      if($DEBUG) echo "item = $_POST['item'] \n<br>";
       AddToCart($_POST["item"]);
    }
    
