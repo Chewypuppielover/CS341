@@ -1,6 +1,6 @@
 <?php
    session_start();
-   //if(!isset($_SESSION["cart"])) $_SESSION["cart"] = array("No items in Cart");
+   //if(!isset($_SESSION["cart"])) $_SESSION["cart"] = array("Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,"Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0,"Druid" => 0, "Necromancer" => 0, "Holly" => 0);
 ?><?php
    print_r($_SESSION["cart"]);
    echo "\n<br>";
