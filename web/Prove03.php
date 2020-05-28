@@ -1,24 +1,22 @@
 <?php
    session_start();
    if(!isset($_SESSION["cart"])){
-      $_SESSION["cart"] = array("Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,"Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0, "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
+      $_SESSION["cart"] = array(
+            "Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,
+            "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0,
+            "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
    }
 ?><?php
    $DEBUG = true;
    if($DEBUG){
-      echo $_SESSION;
+      print_r($_SESSION);
       echo "\n<br>";
    }
    
    if(isset($_POST['item'])) {
-      if($DEBUG){
-         echo "caught post <br>";
-         print_r($_POST);
-      }
-      AddToCart($_POST["item"]);
+      if($DEBUG) echo "item = $_POST['item'] \n<br>";
+      $_SESSION["cart"][$_POST["item"]] += 1;
    }
-   
-   function AddToCart($item){ $_SESSION["cart"][$item] += 1;}
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,8 +24,6 @@
       <meta charset = "utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Store Products </title>
-      <!--<link rel="stylesheet" href=".css">-->
-      <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
    </head>
    <body>
       <header style="text-align:center;">
@@ -35,22 +31,22 @@
          <a href="Prove03_cart.php"> Cart </a>
       </header>
       <hr/>
-      <div style="display:flex">
+      <div>
          <table>
             <th> Products </th>
             <?php
-               $count = 0;
+               $col = 0;
                foreach($_SESSION["cart"] as $item => $x) {
-                  if($count == 0) echo "<tr>";
+                  if($col == 0) echo "<tr>";
                   echo "<td><form method='post'><input type='text' name='item' value='$item' hidden> $item <br>";
                   echo "<input type='submit' value='Add To Cart'></form></td>";
-                  $count += 1;
-                  if($count == 3) {
-                     $count = 0;
+                  $col += 1;
+                  if($col == 3) {
+                     $col = 0;
                      echo "</tr>";
                   }
                }
-               if($count != 0) echo "</tr>";
+               if($col != 0) echo "</tr>";
             ?>
          </table>
       </div>
