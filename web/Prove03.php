@@ -12,7 +12,7 @@
    
    if(isset($_POST['item'])) {
       if($DEBUG) echo "item = $_POST['item'] \n<br>";
-      $_SESSION["cart"][$_POST["item"]] += 1;
+      //$_SESSION["cart"][$_POST["item"]] += 1;
    }
 ?>
 <!DOCTYPE html>
