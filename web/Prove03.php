@@ -26,7 +26,11 @@
       <!--<link rel="stylesheet" href=".css">-->
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
       <script>
-         function reset() location.reload();
+         function reset()
+         {
+            location.reload();
+            
+         }
       </script>
       <style></style>
    </head>
@@ -36,6 +40,7 @@
          <a href="Prove03_cart.php"> Cart </a>
       </header>
       <hr/>
+      <div id="status"> </div>
       <div style="display:flex">
          <table>
             <th> Products </th>
@@ -61,6 +66,7 @@
             print_r($_SESSION["cart"]); 
             
             if(isset($_GET['End Session'])) {
+               echo "ending session"
                session_unset();
                session_destroy();
             }
