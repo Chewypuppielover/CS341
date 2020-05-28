@@ -4,8 +4,9 @@
    $MAXCOL = 3;
    $DEBUG = true;
    if($DEBUG){
+      echo "<pre>";
       print_r($_SESSION);
-      echo "\n<br>";
+      echo "</pre>\n<br>";
    }
    if(isset($_POST['item'])) {
       $item = $_POST["item"];

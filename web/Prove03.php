@@ -7,10 +7,7 @@
 ?><?php
    $MAXCOL = 3;
    $DEBUG = true;
-   if($DEBUG){
-      print_r($_SESSION);
-      echo "\n<br>";
-   }
+   if($DEBUG) echo "<pre>". print_r($_SESSION, true) . "</pre>\n<br>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       if($DEBUG) echo "item = $item \n<br>";
