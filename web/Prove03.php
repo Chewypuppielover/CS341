@@ -15,10 +15,9 @@
    }
    
    if(isset($_POST['item'])) {
-      if($DEBUG){
-         echo "item = $_POST['item'] \n<br>";
-      }
-      AddToCart($_POST["item"]);
+      $item = $_POST["item"];
+      if($DEBUG) echo "item = $item \n<br>";
+      AddToCart($item);
    }
    
    function AddToCart($item){ $_SESSION["cart"][$item] += 1;}
