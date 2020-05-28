@@ -2,7 +2,7 @@
    session_start();
    //if(!isset($_SESSION["cart"])) $_SESSION["cart"] = array("No items in Cart");
 ?><?php
-   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   if(isset($_POST['item'])) {
       echo "caught post <br>";
       print_r($_POST);
       RemoveFromCart($_POST["item"]);
@@ -51,6 +51,7 @@
             }
          ?>
       </table>
+      <br>
       <div id="info">
          <form method='post'><input type='submit' name='End_Session' value='Clear Cart'>
          <?php
