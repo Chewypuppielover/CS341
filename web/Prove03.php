@@ -67,6 +67,7 @@
                echo "ending session";
                session_unset();
                session_destroy();
+               session_start();
             }
          ?>
       </div>
