@@ -1,9 +1,11 @@
 <?php
    session_start();
-?><?php
    if(!isset($_SESSION["cart"])){
       $_SESSION["cart"] = array("Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0, "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0, "Druid" => 0);
    }
+?><?php
+   print_r($_SESSION["cart"]);
+   echo "<br>";
    
    if(isset($_POST['item'])) {
       echo "caught post <br>";
@@ -11,11 +13,7 @@
       AddToCart($_POST["item"]);
    }
    
-   function AddToCart($item){
-      echo "<br>";
-      $_SESSION["cart"][$item] += 1;
-      print_r($_SESSION["cart"]);
-   }  
+   function AddToCart($item) $_SESSION["cart"][$item] += 1;  
 ?>
 <!DOCTYPE html>
 <html>

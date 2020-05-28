@@ -2,17 +2,16 @@
    session_start();
    //if(!isset($_SESSION["cart"])) $_SESSION["cart"] = array("No items in Cart");
 ?><?php
+   print_r($_SESSION["cart"]);
+   echo "<br>";
+   
    if(isset($_POST['item'])) {
       echo "caught post <br>";
       print_r($_POST);
       RemoveFromCart($_POST["item"]);
    }
    
-   function RemoveFromCart($item){
-      echo "<br>";
-      $_SESSION["cart"][$item] -= 1;
-      print_r($_SESSION["cart"]);
-   }
+   function RemoveFromCart($item) $_SESSION["cart"][$item] -= 1;
 ?>
 <!DOCTYPE html>
 <html>
