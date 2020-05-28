@@ -47,7 +47,7 @@
                   echo "<td><form method='post'><input type='text' name='item' value='$item' hidden> $item <br>";
                   echo "<input type='submit' value='Add To Cart'></form></td>";
                   $col += 1;
-                  if($col == 3) {
+                  if($col == $MAXCOL) {
                      $col = 0;
                      echo "</tr>";
                   }
