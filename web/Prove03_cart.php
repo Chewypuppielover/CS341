@@ -1,17 +1,18 @@
 <?php
    session_start();
-   //if(!isset($_SESSION["cart"])) $_SESSION["cart"] = array("Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,"Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0,"Druid" => 0, "Necromancer" => 0, "Holly" => 0);
 ?><?php
-   print_r($_SESSION["cart"]);
-   echo "\n<br>";
-   
-   if(isset($_POST['item'])) {
-      echo "caught post <br>";
-      print_r($_POST);
-      RemoveFromCart($_POST["item"]);
+   $MAXCOL = 3;
+   $DEBUG = true;
+   if($DEBUG){
+      print_r($_SESSION);
+      echo "\n<br>";
    }
-   
-   function RemoveFromCart($item){ $_SESSION["cart"][$item] -= 1;}
+   if(isset($_POST['item'])) {
+      $item = $_POST["item"];
+      if($DEBUG) echo "item = $item \n<br>";
+      $_SESSION["cart"][$item] -= 1;
+      unset($_POST["item"]);
+   }
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +47,7 @@
                      echo "<td><form method='post'><input type='text' name='item' value='$item' hidden>$x... $item <br> ";
                      echo "<input type='submit' value='Remove one from Cart'></form></td>";
                      $col += 1;
-                     if($col == 3) {
+                     if($col == $MAXCOL) {
                         $col = 0;
                         echo "</tr>";
                      }
@@ -63,6 +64,7 @@
          <?php
             if(isset($_POST['End_Session'])) {
                echo "ending session";
+               unset($_POST['End_Session']);
                session_unset();
                session_destroy();
                session_start();

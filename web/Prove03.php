@@ -15,6 +15,7 @@
       $item = $_POST["item"];
       if($DEBUG) echo "item = $item \n<br>";
       $_SESSION["cart"][$item] += 1;
+      unset($_POST["item"]);
    }
 ?>
 <!DOCTYPE html>
