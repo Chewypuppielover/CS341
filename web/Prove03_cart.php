@@ -59,7 +59,7 @@
                session_unset();
                session_destroy();
                session_start();
-               echo "<script type="text/javascript">location.reload();</script>";
+               echo "<script type='text/javascript'>location.reload();</script>";
             }
          ?>
       </div>
