@@ -18,7 +18,7 @@
       AddToCart($_POST["item"]);
    }
    
-   function AddToCart($item) $_SESSION["cart"][$item] += 1;
+   function AddToCart($item){ $_SESSION["cart"][$item] += 1;}
 ?>
 <!DOCTYPE html>
 <html>
