@@ -29,7 +29,7 @@
          function reset()
          {
             location.reload();
-            
+            document.getElementById("status").innerHTML = "successfully reloaded";
          }
       </script>
       <style></style>
