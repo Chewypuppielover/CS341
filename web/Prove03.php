@@ -1,7 +1,10 @@
 <?php
    session_start();
    if(!isset($_SESSION["cart"])){
-      $_SESSION["cart"] = array("Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,"Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0, "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
+      $_SESSION["cart"] = array(
+         "Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,
+         "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0,
+         "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
    }
 ?><?php
    $DEBUG = true;
