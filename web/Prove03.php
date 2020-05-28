@@ -5,7 +5,7 @@
       $_SESSION["cart"] = array("Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0, "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0, "Druid" => 0);
    }
    
-   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   if(isset($_POST['item'])) {
       echo "caught post <br>";
       print_r($_POST);
       AddToCart($_POST["item"]);
@@ -58,12 +58,12 @@
             ?>
          </table>
       </div>
-      <form method='get'><input type='submit' name='End_Session' value='End Session' onclick="reset()">
+      <form method='post'><input type='submit' name='End_Session' value='End Session' onclick="reset()">
       <div id="info">
          <?php
             print_r($_SESSION["cart"]); 
             
-            if(isset($_GET['End_Session'])) {
+            if(isset($_POST['End_Session'])) {
                echo "ending session";
                session_unset();
                session_destroy();
