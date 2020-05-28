@@ -15,7 +15,10 @@
    }
    
    if(isset($_POST['item'])) {
-      if($DEBUG) echo "item = $_POST['item'] \n<br>";
+      if($DEBUG){
+         echo "caught post <br>";
+         print_r($_POST);
+      }
       AddToCart($_POST["item"]);
    }
    
