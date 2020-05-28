@@ -11,7 +11,7 @@
    try {
       $statement = $db -> prepare('INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
       $statement -> execute(['book' => $book, 'chapter' => $chapter, 'verse' => $verse, 'content' => $content]);
-      $scriptureId = $db->lastInsertId("scripture_id_seq");
+      $scriptureId = $db->lastInsertId();
 
       foreach ($topics as $topic)
       {
