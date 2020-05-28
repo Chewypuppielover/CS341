@@ -16,8 +16,7 @@
    
    if(isset($_POST['item'])) {
       if($DEBUG){
-         echo "caught post <br>";
-         print_r($_POST);
+         echo "item = $_POST['item'] \n<br>";
       }
       AddToCart($_POST["item"]);
    }
