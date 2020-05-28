@@ -1,11 +1,9 @@
 <?php
    session_start();
-   if(!isset($_SESSION["cart"])){
-      $_SESSION["cart"] = array(
+   if(!isset($_SESSION["cart"])) $_SESSION["cart"] = array(
          "Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,
          "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0,
          "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
-   }
 ?><?php
    $MAXCOL = 3;
    $DEBUG = true;
@@ -13,14 +11,11 @@
       print_r($_SESSION);
       echo "\n<br>";
    }
-   
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       if($DEBUG) echo "item = $item \n<br>";
-      AddToCart($item);
+      $_SESSION["cart"][$item] += 1;
    }
-   
-   function AddToCart($item){ $_SESSION["cart"][$item] += 1;}
 ?>
 <!DOCTYPE html>
 <html>
