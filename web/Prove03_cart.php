@@ -59,9 +59,9 @@
                session_unset();
                session_destroy();
                session_start();
+               echo "<script type="text/javascript">location.reload();</script>";
             }
          ?>
       </div>
-      <?php print_r($_SESSION); ?>
    </body>
 </html>
