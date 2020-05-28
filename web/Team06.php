@@ -18,11 +18,14 @@
          Topic: <br>
          <?php 
             try {
-               $statement = $db->prepare('SELECT name FROM topics');
+               $statement = $db->prepare('SELECT id, name FROM topics');
                $statement-> execute();
                while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                {
-                  echo "<input type='checkbox' name='topics[]' value='$row['name']'>";
+                  $id = $row['id'];
+                  $name = $row['name'];
+                  echo "<input type='checkbox' name='topics[]' id='$name' name value='$id'>";
+                  echo "<label for='$name'>$name</label><br>";
                }
             }
             catch (PDOException $ex) {
