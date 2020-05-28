@@ -56,6 +56,7 @@
          <?php
             if(isset($_POST['End_Session'])) {
                echo "ending session";
+               unset($_POST);
                session_unset();
                session_destroy();
                session_start();
