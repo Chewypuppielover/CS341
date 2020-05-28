@@ -33,7 +33,7 @@
          <a href="Prove03_cart.php"> Cart </a>
       </header>
       <hr/>
-      <div>
+      <div style="margin-left:20%">
          <table>
             <th> Products </th>
             <?php
