@@ -9,7 +9,7 @@
 ?><?php
    $DEBUG = true;
    if($DEBUG){
-      echo $_SESSION["cart"];
+      print_r($_SESSION["cart"]);
       echo "\n<br>";
    }
    
