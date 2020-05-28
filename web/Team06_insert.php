@@ -16,8 +16,9 @@
       foreach ($topics as $topic)
       {
          echo $topic;
+         echo $scriptureID;
          $statement = $db -> prepare('INSERT INTO linked VALUES (?, ?)');
-         $statement -> execute([$scriptureID, $topic]);
+         $statement -> execute([$topic, $scriptureID]);
       }
    }
    catch (PDOException $ex) {

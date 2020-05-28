@@ -24,7 +24,7 @@
                {
                   $id = $row['id'];
                   $name = $row['name'];
-                  echo "<input type='checkbox' name='topics[]' id='$name' value='$id'>$name <br>";
+                  echo "<label><input type='checkbox' name='topics[]' id='$name' value='$id'>$name</label><br>";
                }
             }
             catch (PDOException $ex) {
