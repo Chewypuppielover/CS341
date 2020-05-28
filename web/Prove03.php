@@ -6,13 +6,13 @@
    }
    
    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      echo "caught post";
+      echo "caught post <br>";
       print_r($_POST);
       AddToCart($_POST["item"]);
    }
    
    function AddToCart($item){
-      echo $item[0];
+      echo "<br> item = $item <br>";
       $_SESSION["cart"][$item] += 1;
       print_r($_SESSION["cart"]);
    }  
