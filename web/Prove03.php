@@ -58,12 +58,12 @@
             ?>
          </table>
       </div>
-      <form action='test.php' method='get'><input type='submit' name='End Session' value='End Session'>
+      <form method='get'><input type='submit' name='End_Session' value='End Session' onclick="reset()">
       <div id="info">
          <?php
             print_r($_SESSION["cart"]); 
             
-            if(isset($_GET['End Session'])) {
+            if(isset($_GET['End_Session'])) {
                echo "ending session";
                session_unset();
                session_destroy();
