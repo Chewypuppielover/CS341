@@ -6,7 +6,7 @@
 ?><?php
    $DEBUG = true;
    if($DEBUG){
-      print_r($_SESSION["cart"]);
+      echo $_SESSION["cart"];
       echo "\n<br>";
    }
    
