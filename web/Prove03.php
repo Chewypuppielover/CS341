@@ -58,7 +58,7 @@
             ?>
          </table>
       </div>
-      <form method='get'><input type='submit' name='End Session' value='End Session'>
+      <form action='test.php' method='get'><input type='submit' name='End Session' value='End Session'>
       <div id="info">
          <?php
             print_r($_SESSION["cart"]); 
