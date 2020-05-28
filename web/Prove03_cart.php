@@ -3,11 +3,7 @@
 ?><?php
    $MAXCOL = 3;
    $DEBUG = true;
-   if($DEBUG){
-      echo "<pre>";
-      print_r($_SESSION);
-      echo "</pre>\n<br>";
-   }
+   if($DEBUG) echo "<pre>", print_r($_SESSION, true), "</pre>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       if($DEBUG) echo "item = $item \n<br>";
@@ -23,8 +19,8 @@
       <title>Products Cart </title>
       <script type="text/javascript">
          function reset() {
-            document.getElementById("info") = "";
             location.reload();
+            document.getElementById("info") = "";
          }
       </script>
    </head>

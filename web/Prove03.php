@@ -7,7 +7,8 @@
 ?><?php
    $MAXCOL = 3;
    $DEBUG = true;
-   if($DEBUG) echo "<pre>". print_r($_SESSION, true) . "</pre>\n<br>";
+   if($DEBUG) echo "<pre>", print_r($_SESSION, true), "<br>",
+                  print_r($_POST), "</pre>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       if($DEBUG) echo "item = $item \n<br>";
@@ -35,8 +36,9 @@
                $col = 0;
                foreach($_SESSION["cart"] as $item => $x) {
                   if($col == 0) echo "<tr>";
-                  echo "<td><form method='post'><input type='text' name='item' value='$item' hidden> $item <br>";
-                  echo "<input type='submit' value='Add To Cart'></form></td>";
+                  echo "<td><form method='post'>
+                        <input type='text' name='item' value='$item' hidden> $item <br>
+                        <input type='submit' value='Add To Cart'></form></td>";
                   $col += 1;
                   if($col == $MAXCOL) {
                      $col = 0;
