@@ -14,9 +14,9 @@
       $scriptureId = $db -> lastInsertId("scripture_id_seq");
 
       foreach ($topics as $topicID) {
-         echo "Topic: $topic, Scripture: $scriptureID <br>";
+         echo "Topic: $topicID, Scripture: $scriptureID <br>";
          $statement = $db -> prepare('INSERT INTO linked (topicID, scriptureID) VALUES (?, ?)');
-         $statement -> execute([$topic, $scriptureID]);
+         $statement -> execute([$topicID, $scriptureID]);
       }
    }
    catch (PDOException $ex) {
