@@ -31,23 +31,39 @@
          <?php
             if(!isset($_SESSION["cart"])) echo "<tr><td> No items in Cart </td></tr>";
             else {
+               $col = 0;
                $count = 0;
                foreach($_SESSION["cart"] as $item => $x) {
                   if($x != 0) {
-                     if($count == 0) echo "<tr>";
+                     $count += 1;
+                     if($col == 0) echo "<tr>";
                      echo "<td><form method='post'><input type='text' name='item' value='$item' hidden>$x... $item <br> ";
                      echo "<input type='submit' value='Remove one from Cart'></form></td>";
-                     $count += 1;
-                     if($count == 3) {
-                        $count = 0;
+                     $col += 1;
+                     if($col == 3) {
+                        $col = 0;
                         echo "</tr>";
                      }
                   }
                }
-               if($count != 0) echo "</tr>";
+               if($col != 0) echo "</tr>";
+               if($count == 0) echo "<tr><td> No items in Cart </td></tr>";
             }
          ?>
       </table>
+      <div id="info">
+         <form method='post'><input type='submit' name='End_Session' value='Clear Cart'>
+         <?php
+            print_r($_SESSION["cart"]); 
+            
+            if(isset($_POST['End_Session'])) {
+               echo "ending session";
+               session_unset();
+               session_destroy();
+               session_start();
+            }
+         ?>
+      </div>
       <?php print_r($_SESSION); ?>
    </body>
 </html>

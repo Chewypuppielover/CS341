@@ -25,12 +25,6 @@
       <title>Store Products </title>
       <!--<link rel="stylesheet" href=".css">-->
       <!--<script src="jsFuncts.js"> </script> type='text/javascript'-->
-      <script>
-         function reset() {
-            location.reload();
-            document.getElementById("status").innerHTML = "successfully reloaded";
-         }
-      </script>
    </head>
    <body>
       <header style="text-align:center;">
@@ -38,7 +32,6 @@
          <a href="Prove03_cart.php"> Cart </a>
       </header>
       <hr/>
-      <div id="status"> </div>
       <div style="display:flex">
          <table>
             <th> Products </th>
@@ -57,19 +50,6 @@
                if($count != 0) echo "</tr>";
             ?>
          </table>
-      </div>
-      <form method='post'><input type='submit' name='End_Session' value='End Session' onclick="reset()">
-      <div id="info">
-         <?php
-            print_r($_SESSION["cart"]); 
-            
-            if(isset($_POST['End_Session'])) {
-               echo "ending session";
-               session_unset();
-               session_destroy();
-               session_start();
-            }
-         ?>
       </div>
    </body>
 </html>
