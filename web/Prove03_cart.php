@@ -19,6 +19,12 @@
       <meta charset = "utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Products Cart </title>
+      <script type="text/javascript">
+         function reset() {
+            document.getElementById("info") = "";
+            location.reload();
+         }
+      </script>
    </head>
    <body>
       <header style="text-align:center;">
@@ -51,8 +57,8 @@
          ?>
       </table>
       <br>
-      <div id="info">
-         <form method='post'><input type='submit' onclick="function {location.reload();}" name='End_Session' value='Clear Cart'>
+      <form method='post'><input type='submit' name='End_Session' value='Clear Cart'>
+      <div id="info" onchange="reset()">
          <?php
             if(isset($_POST['End_Session'])) {
                echo "ending session";
