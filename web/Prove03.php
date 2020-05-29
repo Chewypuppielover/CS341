@@ -4,6 +4,7 @@
          "Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,
          "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0,
          "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
+   if(!isset($_SESSION["DEBUG"])) $_SESSION["DEBUG"] = true;
    $MAXCOL = 3;
 ?>
 <!DOCTYPE html>
@@ -18,16 +19,15 @@
    </head>
    <body>
       <?php
-            $DEBUG = true;
-            if($DEBUG) echo "POST: ",print_r($_POST,true),"<br>";
+            if($_SESSION["DEBUG"]) echo "POST: ", print_r($_POST,true),"<br>";
          if(isset($_POST['item'])) {
             $item = $_POST["item"];
             unset($_POST["item"]);
             $_SESSION["cart"][$item] += 1;
-               if($DEBUG) echo "item = $item \n<br>";
-               if($DEBUG) echo "POST: ",print_r($_POST,true); //,"<br>";
+               if($_SESSION["DEBUG"]) echo "item = $item \n<br>";
+               if($_SESSION["DEBUG"]) echo "POST: ", print_r($_POST,true);
          }
-            if($DEBUG) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
+            if($_SESSION["DEBUG"]) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
       ?>
       <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
