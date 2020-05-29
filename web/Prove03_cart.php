@@ -71,11 +71,12 @@
          ?>
       </div>
       <script type="text/javascript">
-         var DEBUG = false;
-         if(DEBUG) alert("JS is Working, page loaded");
-         document.getElementById("clr").addEventListener("click", function(){reset('button');} );
-         document.getElementById("info").addEventListener("change", function(){reset('div');} );
-         
+         $(document).ready(function () {
+            var DEBUG = false;
+            if(DEBUG) alert("JS is Working, page loaded");
+            //document.getElementById("clr").addEventListener("click", function(){reset('button');} );
+            document.getElementById("info").addEventListener("change", function(){reset('div');} );
+         }
          function reset(source) {
             alert("reset called by " + source);
             location.reload();
