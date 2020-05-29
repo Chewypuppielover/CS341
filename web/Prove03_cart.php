@@ -73,7 +73,7 @@
       </div>
       <script type="text/javascript">
          window.onload = function () {
-            var DEBUG = false;
+            var DEBUG = true;
             if(DEBUG) alert("JS is Working, page loaded");
             //document.getElementById("clr").addEventListener("click", function(){reset('button');} );
             document.getElementById("info").addEventListener("change", function(){reset('div');} );
