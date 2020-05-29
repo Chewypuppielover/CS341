@@ -68,7 +68,7 @@
                unset($_POST["End_Session"]);
                unset($_SESSION["cart"]);
                   if($_SESSION["DEBUG"]) print_r($_SESSION);
-               header("Refresh:1");
+               header("Refresh:0");
                //session_unset(); session_destroy(); session_start();
             }
          ?>
