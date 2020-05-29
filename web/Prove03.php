@@ -14,7 +14,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Store Products </title>
       <script type="text/javascript">
-         alert("JS is Working, page loaded");
+         var DEBUG = false;
+         if(DEBUG) alert("JS is Working, page loaded");
       </script>
    </head>
    <body>
@@ -27,7 +28,7 @@
                if($_SESSION["DEBUG"]) echo "item = $item \n<br>";
                if($_SESSION["DEBUG"]) echo "POST: ", print_r($_POST,true);
          }
-            if($_SESSION["DEBUG"]) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
+            if($_SESSION["DEBUG"]) echo "<pre>SESSION ",print_r($_SESSION,true),"</pre>";
       ?>
       <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
