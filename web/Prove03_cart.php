@@ -4,8 +4,8 @@
 ?><?php
    $DEBUGCOUNT = 0;
    $DEBUG = true;
-   if($DEBUG) echo "<pre>", print_r($_SESSION, true),
-                  print_r($_POST), "</pre>";
+   if($DEBUG) echo "<pre>SESSION:<br>", print_r($_SESSION, true),
+                   "POST:<br>", print_r($_POST, true), "</pre>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       if($DEBUG) echo "item = $item \n<br>";
@@ -20,7 +20,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Products Cart </title>
       <script type="text/javascript">
-         function reset() {
+         function reset(source) {
+            alert("reset called by " + source);
             location.reload();
             document.getElementById("info") = "";
          }
@@ -58,8 +59,8 @@
          ?>
       </table>
       <br>
-      <form method='post'><input type='submit' name='End_Session' value='Clear Cart'>
-      <div id="info" onchange="reset()">
+      <form method='post'><input type='submit' onclick="reset('button')" name='End_Session' value='Clear Cart'>
+      <div id="info" onchange="reset('div')">
          <?php
             if(isset($_POST['End_Session'])) {
                $DEBUGCOUNT += 1;

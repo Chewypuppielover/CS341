@@ -7,8 +7,8 @@
    $MAXCOL = 3;
 ?><?php
    $DEBUG = true;
-   if($DEBUG) echo "<pre>", print_r($_SESSION, true),
-                  print_r($_POST, true), "</pre>";
+   if($DEBUG) echo "<pre>SESSION:<br>", print_r($_SESSION, true),
+                   "POST:<br>", print_r($_POST, true), "</pre>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       if($DEBUG) echo "item = $item \n<br>";
