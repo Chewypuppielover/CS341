@@ -7,13 +7,14 @@
 ?><?php
    $MAXCOL = 3;
    $DEBUG = true;
-   if($DEBUG) echo "<pre>", print_r($_SESSION, true), "<br>",
-                  print_r($_POST), "</pre>";
+   if($DEBUG) echo "<pre>", print_r($_SESSION, true),
+                  print_r($_POST, true), "</pre>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       if($DEBUG) echo "item = $item \n<br>";
       $_SESSION["cart"][$item] += 1;
       unset($_POST["item"]);
+      if($DEBUG) echo "<br>", print_r($_POST, true), "<br>";
    }
 ?>
 <!DOCTYPE html>
