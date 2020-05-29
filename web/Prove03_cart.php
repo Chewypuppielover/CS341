@@ -65,18 +65,19 @@
          ?>
       </table>
       <br>
-      <form method='post'>
-         <input type='submit' id='clear' name='End_Session' value='Clear Cart'>
+      <form method="post">
+         <input type="submit" id="clear" name="End_Session" value="Clear Cart">
       </form>
       <div id="info">
          <?php
-            if(isset($_POST['End_Session'])) {
+            if(isset($_POST["End_Session"])) {
                $DEBUGCOUNT += 1;
                echo "ending session $DEBUGCOUNT";
-               unset($_POST['End_Session']);
-               session_unset();
-               session_destroy();
-               session_start();
+               unset($_POST["End_Session"]);
+               unset($_SESSION["cart"]);
+               //session_unset();
+               //session_destroy();
+               //session_start();
                print_r($_SESSION);
             }
          ?>
