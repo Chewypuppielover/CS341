@@ -71,7 +71,7 @@
          ?>
       </div>
       <script type="text/javascript">
-         $(document).ready(function () {
+         window.onload = function () {
             var DEBUG = false;
             if(DEBUG) alert("JS is Working, page loaded");
             //document.getElementById("clr").addEventListener("click", function(){reset('button');} );
