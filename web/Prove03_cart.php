@@ -11,11 +11,11 @@
    </head>
    <body>
       <?php
-            if(!isset($DEBUGCOUNT)) {
-               $DEBUGCOUNT = 0;
-               echo "DBcount reset to $DEBUGCOUNT<br>";
+            if($_SESSION["DEBUG"] and !isset($_SESSION["DBCOUNT"])) {
+               $_SESSION["DBCOUNT"] = 0;
+               echo "DBcount reset to $_SESSION['DBCOUNT']<br>";
             }
-            if($_SESSION["DEBUG"]) echo "DBcount = $DEBUGCOUNT<br>";
+            if($_SESSION["DEBUG"]) echo "DBcount = $_SESSION['DBCOUNT']<br>";
             if($_SESSION["DEBUG"]) echo "POST: ", print_r($_POST,true),"<br>";
          if(isset($_POST['item'])) {
             $item = $_POST["item"];
@@ -61,8 +61,8 @@
       <div id="info">
          <?php
             if(isset($_POST["End_Session"])) {
-               $DEBUGCOUNT += 1;
-               echo "ending session $DEBUGCOUNT<br>";
+               $_SESSION['DEBUGCOUNT'] += 1;
+               echo "ending session $_SESSION['DEBUGCOUNT']<br>";
                unset($_POST["End_Session"]);
                unset($_SESSION["cart"]);
                print_r($_SESSION);
