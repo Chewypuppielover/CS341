@@ -1,7 +1,6 @@
 <?php
    session_start();
    $MAXCOL = 3;
-   $_SESSION["DEBUG"] = false;
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +10,22 @@
       <title>Products Cart </title>
    </head>
    <body>
+      <?php
+            if($_SESSION["DEBUG"] && !isset($_SESSION["DBCOUNT"])) {
+               $_SESSION["DBCOUNT"] = 0;
+               echo "DBcount reset to ",$_SESSION['DBCOUNT'],"<br>";
+            }
+            if($_SESSION["DEBUG"]) echo "DBcount = $_SESSION['DBCOUNT']<br>";
+            if($_SESSION["DEBUG"]) echo "POST: ", print_r($_POST,true),"<br>";
+         if(isset($_POST['item'])) {
+            $item = $_POST["item"];
+            unset($_POST["item"]);
+            $_SESSION["cart"][$item] -= 1;
+               if($_SESSION["DEBUG"]) echo "item = $item \n<br>";
+               if($_SESSION["DEBUG"]) echo "POST: ", print_r($_POST,true);
+         }
+            if($_SESSION["DEBUG"]) echo "<pre>SESSION ",print_r($_SESSION,true),"</pre>";
+      ?>
       <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
          <a href="Prove03.php"> Products </a>

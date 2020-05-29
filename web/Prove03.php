@@ -4,7 +4,7 @@
          "Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,
          "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0,
          "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
-   if(!isset($_SESSION["DEBUG"])) $_SESSION["DEBUG"] = false;
+   if(!isset($_SESSION["DEBUG"])) $_SESSION["DEBUG"] = true;
    $MAXCOL = 3;
 ?>
 <!DOCTYPE html>
