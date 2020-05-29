@@ -7,15 +7,15 @@
    $MAXCOL = 3;
 ?><?php
    $DEBUG = true;
-   if($DEBUG) echo "<pre>SESSION:<br>", print_r($_SESSION, true),
-                   "POST:<br>", print_r($_POST, true), "</pre>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
+      unset($_POST["item"]);
       if($DEBUG) echo "item = $item \n<br>";
       $_SESSION["cart"][$item] += 1;
-      unset($_POST["item"]);
       if($DEBUG) echo "<br>", print_r($_POST, true), "<br>";
    }
+   if($DEBUG) echo "<pre>SESSION:<br>", print_r($_SESSION, true),
+                   "POST:<br>", print_r($_POST, true), "</pre>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@
    <body>
       <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
-         <a href="Prove03_cart.php"> Cart </a>
+         <h3><a href="Prove03_cart.php"> Cart </a></h3>
       </header>
       <hr/>
       <div style="margin-left:20%">

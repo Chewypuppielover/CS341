@@ -8,9 +8,9 @@
                    "POST:<br>", print_r($_POST, true), "</pre>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
+      unset($_POST["item"]);
       if($DEBUG) echo "item = $item \n<br>";
       $_SESSION["cart"][$item] -= 1;
-      unset($_POST["item"]);
    }
 ?>
 <!DOCTYPE html>
@@ -59,8 +59,10 @@
          ?>
       </table>
       <br>
-      <form method='post'><input type='submit' onclick="reset('button')" name='End_Session' value='Clear Cart'>
-      <div id="info" onchange="reset('div')">
+      <form method='post'>
+      <input type='submit' onclick="alert('button')" name='End_Session' value='Clear Cart'>
+      </form>
+      <div id="info" onchange="alert('div')">
          <?php
             if(isset($_POST['End_Session'])) {
                $DEBUGCOUNT += 1;
