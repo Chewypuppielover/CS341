@@ -11,7 +11,7 @@
    </head>
    <body>
       <?php
-            if($_SESSION["DEBUG"] and !isset($_SESSION["DBCOUNT"])) {
+            if($_SESSION["DEBUG"] && !isset($_SESSION["DBCOUNT"])) {
                $_SESSION["DBCOUNT"] = 0;
                echo "DBcount reset to $_SESSION['DBCOUNT']<br>";
             }
