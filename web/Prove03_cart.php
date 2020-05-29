@@ -2,16 +2,17 @@
    session_start();
    $MAXCOL = 3;
 ?><?php
-   $DEBUGCOUNT = 0;
-   $DEBUG = true;
-   if($DEBUG) echo "<pre>SESSION:<br>", print_r($_SESSION, true),
-                   "POST:<br>", print_r($_POST, true), "</pre>";
+      $DEBUGCOUNT = 0;
+      $DEBUG = true;
+      if($DEBUG) echo "POST:<br>",print_r($_POST,true),"<br>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       unset($_POST["item"]);
-      if($DEBUG) echo "item = $item \n<br>";
       $_SESSION["cart"][$item] -= 1;
+         if($DEBUG) echo "item = $item \n<br>";
+         if($DEBUG) echo "<br>POST: ",print_r($_POST,true),"<br>";
    }
+      if($DEBUG) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,6 +21,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Products Cart </title>
       <script type="text/javascript">
+         alert("JS is Working");
+         document.getElementById("clear").addEventListener("click", reset('button'));
+         document.getElementById("info").addEventListener("change", reset('div'));
          function reset(source) {
             alert("reset called by " + source);
             location.reload();
@@ -60,9 +64,9 @@
       </table>
       <br>
       <form method='post'>
-      <input type='submit' onclick="alert('button')" name='End_Session' value='Clear Cart'>
+         <input type='submit' id='clear' name='End_Session' value='Clear Cart'>
       </form>
-      <div id="info" onchange="alert('div')">
+      <div id="info">
          <?php
             if(isset($_POST['End_Session'])) {
                $DEBUGCOUNT += 1;
@@ -71,6 +75,7 @@
                session_unset();
                session_destroy();
                session_start();
+               print_r($_SESSION);
             }
          ?>
       </div>

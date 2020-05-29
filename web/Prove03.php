@@ -6,16 +6,16 @@
          "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
    $MAXCOL = 3;
 ?><?php
-   $DEBUG = true;
+      $DEBUG = true;
+      if($DEBUG) echo "POST:<br>",print_r($_POST,true),"<br>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       unset($_POST["item"]);
-      if($DEBUG) echo "item = $item \n<br>";
       $_SESSION["cart"][$item] += 1;
-      if($DEBUG) echo "<br>", print_r($_POST, true), "<br>";
+         if($DEBUG) echo "item = $item \n<br>";
+         if($DEBUG) echo "<br>POST: ",print_r($_POST,true),"<br>";
    }
-   if($DEBUG) echo "<pre>SESSION:<br>", print_r($_SESSION, true),
-                   "POST:<br>", print_r($_POST, true), "</pre>";
+      if($DEBUG) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
 ?>
 <!DOCTYPE html>
 <html>
