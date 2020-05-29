@@ -1,18 +1,6 @@
 <?php
    session_start();
    $MAXCOL = 3;
-?><?php
-      $DEBUGCOUNT = 0;
-      $DEBUG = true;
-      if($DEBUG) echo "POST:<br>",print_r($_POST,true),"<br>";
-   if(isset($_POST['item'])) {
-      $item = $_POST["item"];
-      unset($_POST["item"]);
-      $_SESSION["cart"][$item] -= 1;
-         if($DEBUG) echo "item = $item \n<br>";
-         if($DEBUG) echo "<br>POST: ",print_r($_POST,true),"<br>";
-   }
-      if($DEBUG) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,17 +9,31 @@
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Products Cart </title>
       <script type="text/javascript">
-         alert("JS is Working");
+         alert("JS is Working, page loaded");
          document.getElementById("clear").addEventListener("click", reset('button'));
          document.getElementById("info").addEventListener("change", reset('div'));
+         
          function reset(source) {
             alert("reset called by " + source);
             location.reload();
-            document.getElementById("info") = "";
+            alert(document.getElementById("info").innerHTML);// = "";
          }
       </script>
    </head>
    <body>
+      <?php
+         $DEBUGCOUNT = 0;
+         $DEBUG = true;
+         if($DEBUG) echo "POST: ",print_r($_POST,true),"<br>";
+      if(isset($_POST['item'])) {
+         $item = $_POST["item"];
+         unset($_POST["item"]);
+         $_SESSION["cart"][$item] -= 1;
+            if($DEBUG) echo "item = $item \n<br>";
+            if($DEBUG) echo "POST: ",print_r($_POST,true),"<br>";
+      }
+         if($DEBUG) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
+      ?>
       <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
          <a href="Prove03.php"> Products </a>

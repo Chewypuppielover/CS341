@@ -5,17 +5,6 @@
          "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0,
          "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
    $MAXCOL = 3;
-?><?php
-      $DEBUG = true;
-      if($DEBUG) echo "POST:<br>",print_r($_POST,true),"<br>";
-   if(isset($_POST['item'])) {
-      $item = $_POST["item"];
-      unset($_POST["item"]);
-      $_SESSION["cart"][$item] += 1;
-         if($DEBUG) echo "item = $item \n<br>";
-         if($DEBUG) echo "<br>POST: ",print_r($_POST,true),"<br>";
-   }
-      if($DEBUG) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,8 +12,23 @@
       <meta charset = "utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Store Products </title>
+      <script type="text/javascript">
+         alert("JS is Working, page loaded");
+      </script>
    </head>
    <body>
+      <?php
+            $DEBUG = true;
+            if($DEBUG) echo "POST: ",print_r($_POST,true),"<br>";
+         if(isset($_POST['item'])) {
+            $item = $_POST["item"];
+            unset($_POST["item"]);
+            $_SESSION["cart"][$item] += 1;
+               if($DEBUG) echo "item = $item \n<br>";
+               if($DEBUG) echo "POST: ",print_r($_POST,true); //,"<br>";
+         }
+            if($DEBUG) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
+      ?>
       <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
          <h3><a href="Prove03_cart.php"> Cart </a></h3>
