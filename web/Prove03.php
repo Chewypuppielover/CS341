@@ -4,8 +4,8 @@
          "Broken TV" => 0, "JarJar" => 0, "Pirate Magnet" => 0,
          "Cleric" => 0, "Sorcerer" => 0, "Ranger" => 0,
          "Druid" => 0, "Necromancer" => 0, "Holly" => 0);
-?><?php
    $MAXCOL = 3;
+?><?php
    $DEBUG = true;
    if($DEBUG) echo "<pre>", print_r($_SESSION, true),
                   print_r($_POST, true), "</pre>";

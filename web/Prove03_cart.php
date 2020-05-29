@@ -1,9 +1,11 @@
 <?php
    session_start();
-?><?php
    $MAXCOL = 3;
+?><?php
+   $DEBUGCOUNT = 0;
    $DEBUG = true;
-   if($DEBUG) echo "<pre>", print_r($_SESSION, true), "</pre>";
+   if($DEBUG) echo "<pre>", print_r($_SESSION, true),
+                  print_r($_POST), "</pre>";
    if(isset($_POST['item'])) {
       $item = $_POST["item"];
       if($DEBUG) echo "item = $item \n<br>";
@@ -60,7 +62,8 @@
       <div id="info" onchange="reset()">
          <?php
             if(isset($_POST['End_Session'])) {
-               echo "ending session";
+               $DEBUGCOUNT += 1;
+               echo "ending session $DEBUGCOUNT";
                unset($_POST['End_Session']);
                session_unset();
                session_destroy();
