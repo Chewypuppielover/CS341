@@ -1,6 +1,7 @@
 <?php
    session_start();
    $MAXCOL = 3;
+   $_SESSION["DEBUG"] = false;
 ?>
 <!DOCTYPE html>
 <html>
