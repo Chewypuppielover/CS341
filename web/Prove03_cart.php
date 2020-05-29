@@ -61,8 +61,8 @@
       <div id="info">
          <?php
             if(isset($_POST["End_Session"])) {
-               $_SESSION['DEBUGCOUNT'] += 1;
-               echo "ending session ",$_SESSION['DEBUGCOUNT'],"<br>";
+               $_SESSION['DBCOUNT'] += 1;
+               echo "ending session ",$_SESSION['DBCOUNT'],"<br>";
                unset($_POST["End_Session"]);
                unset($_SESSION["cart"]);
                print_r($_SESSION);
