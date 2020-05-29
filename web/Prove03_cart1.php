@@ -11,6 +11,22 @@
       <title>Products Cart </title>
    </head>
    <body>
+      <?php
+            if($_SESSION["DEBUG"] && !isset($_SESSION["DBCOUNT"])) {
+               $_SESSION["DBCOUNT"] = 0;
+               echo "DBcount reset to ",$_SESSION['DBCOUNT'],"<br>";
+            }
+            if($_SESSION["DEBUG"]) echo "DBcount = $_SESSION['DBCOUNT']<br>";
+            if($_SESSION["DEBUG"]) echo "POST: ", print_r($_POST,true),"<br>";
+         if(isset($_POST['item'])) {
+            $item = $_POST["item"];
+            unset($_POST["item"]);
+            $_SESSION["cart"][$item] -= 1;
+               if($_SESSION["DEBUG"]) echo "item = $item \n<br>";
+               if($_SESSION["DEBUG"]) echo "POST: ", print_r($_POST,true);
+         }
+            if($_SESSION["DEBUG"]) echo "<pre>SESSION ",print_r($_SESSION,true),"</pre>";
+      ?>
       <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
          <a href="Prove03.php"> Products </a>
@@ -44,7 +60,16 @@
          <input type="submit" id="clr" name="End_Session" value="Clear Cart">
       </form>
       <div id="info">
-         
+         <?php
+            if(isset($_POST["End_Session"])) {
+               $_SESSION['DEBUGCOUNT'] += 1;
+               echo "ending session $_SESSION['DEBUGCOUNT']<br>";
+               unset($_POST["End_Session"]);
+               unset($_SESSION["cart"]);
+               print_r($_SESSION);
+               //session_unset(); session_destroy(); session_start();
+            }
+         ?>
       </div>
       <script type="text/javascript">
          window.onload = function () {
