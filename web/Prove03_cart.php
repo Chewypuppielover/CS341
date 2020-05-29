@@ -61,29 +61,17 @@
       <div id="info">
          <?php
             if(isset($_POST["End_Session"])) {
-               $_SESSION['DBCOUNT'] += 1;
-               echo "ending session ",$_SESSION['DBCOUNT'],"<br>";
+               if($_SESSION["DEBUG"]) {
+                  $_SESSION['DBCOUNT'] += 1;
+                  echo "ending session ",$_SESSION['DBCOUNT'],"<br>";
+               }
                unset($_POST["End_Session"]);
                unset($_SESSION["cart"]);
-               print_r($_SESSION);
+                  if($_SESSION["DEBUG"]) print_r($_SESSION);
                header("Refresh:1");
                //session_unset(); session_destroy(); session_start();
             }
          ?>
       </div>
-      <script type="text/javascript">
-         window.onload = function () {
-            var DEBUG = true;
-            if(DEBUG) alert("JS is Working, page loaded");
-            //document.getElementById("clr").addEventListener("click", function(){reset('button');} );
-            document.getElementById("info").addEventListener("change", function(){reset('div');} );
-         };
-         
-         function reset(source) {
-            alert("reset called by " + source);
-            alert(document.getElementById("info").innerHTML);// = "";
-            location.reload();
-         }
-      </script>
    </body>
 </html>
