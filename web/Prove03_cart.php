@@ -31,7 +31,7 @@
                if($_SESSION["DEBUG"]) echo "item = $item \n<br>";
                if($_SESSION["DEBUG"]) echo "POST: ", print_r($_POST,true);
          }
-            if($_SESSION["DEBUG"]) echo "<pre>SESSION:<br>",print_r($_SESSION,true),"</pre>";
+            if($_SESSION["DEBUG"]) echo "<pre>SESSION ",print_r($_SESSION,true),"</pre>";
       ?>
       <header style="text-align:center;">
          <h1>Sally's Terrible Store </h1>
@@ -41,8 +41,7 @@
       <table>
          <th> Products in Cart</th>
          <?php
-            if(!isset($_SESSION["cart"])) echo "<tr><td> No items in Cart </td></tr>";
-            else {
+           // if(!isset($_SESSION["cart"])) echo "<tr><td> No items in Cart </td></tr>"; else {
                $col = 0;
                $count = 0;
                foreach($_SESSION["cart"] as $item => $x) {
@@ -61,7 +60,7 @@
                }
                if($col != 0) echo "</tr>";
                if($count == 0) echo "<tr><td> No items in Cart </td></tr>";
-            }
+           // }
          ?>
       </table>
       <br>
@@ -72,7 +71,7 @@
          <?php
             if(isset($_POST["End_Session"])) {
                $DEBUGCOUNT += 1;
-               echo "ending session $DEBUGCOUNT";
+               echo "ending session $DEBUGCOUNT<br>";
                unset($_POST["End_Session"]);
                unset($_SESSION["cart"]);
                //session_unset();
